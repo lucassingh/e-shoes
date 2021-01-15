@@ -29,7 +29,7 @@ const CardDetail = ({item}) => {
     return (
         <article className="product">
             <div className="foto">
-                <img src="http://placehold.it/400x400" alt=""/>
+                <img src={`/assets/products/${item.img}`} alt=""/>
             </div>
 
             <div className="info">
