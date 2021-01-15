@@ -1,23 +1,23 @@
 import {useEffect, useState} from 'react';
 import {useParams, Link} from 'react-router-dom';
 import CardDetail from './cardDetail/CardDetail';
-import { products } from '../../productsData';
 import './ProductDetail.css';
+import {getFirestore} from '../../db';
+import Loader from '../shared/loader/Loader';
 
 const ProductDetail = () => {
     const {id} = useParams();
     const [product, setProduct] = useState(null);
-
-    const getProduct = new Promise((resolve) => {
-        const selectedProduct = products.filter(item => item.id === parseInt(id));
-        resolve(selectedProduct[0]);
-    });
+    const db = getFirestore();
 
     useEffect(() => {
-        getProduct
-        .then(response => setProduct(response))
-        .catch(error => console.log(error));
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+        db.collection('products').doc(id).get()
+        .then(doc => {
+            if(doc.exists) {
+                setProduct(doc.data());
+            }
+        })
+        .catch(e => console.log(e));
     }, []);
 
     return (
@@ -36,7 +36,7 @@ const ProductDetail = () => {
                     
                     <CardDetail item={product} />
                 </div> : 
-                <p>Cargando producto...</p>
+                <Loader/>
             }
         </>
     )

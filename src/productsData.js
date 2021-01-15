@@ -1,10 +1,10 @@
 export const products = [
     {
         "id": 1,
-        "category": "Nike Joyrid Run",
-        "title": "Moises WePets Classic Lunar",
+        "category": "nike",
+        "title": "Nike Joyrid Run",
         "description": "asdasdas dasdasd asdasdqr arewqwerq",
-        "img": "../src/assets/products/nike-1.png",
+        "img": "nike-1.jpg",
         "size": [
         "m"
         ],
@@ -17,7 +17,7 @@ export const products = [
         "category": "nike",
         "title": "Nike Free RN 5.0",
         "description": "",
-        "img": "../src/assets/products/nike-2.png",
+        "img": "nike-2.jpg",
         "size": [
         "s",
         "m"
@@ -31,7 +31,7 @@ export const products = [
         "category": "nike",
         "title": "Nike Air zoom Winflo 7",
         "description": "",
-        "img": "../src/assets/products/nike-3.png",
+        "img": "nike-3.jpg",
         "size": "",
         "price": 4170,
         "outstanding": true,
@@ -42,7 +42,7 @@ export const products = [
         "category": "nike",
         "title": "Nike Free RN 5.0",
         "description": "",
-        "img": "../src/assets/products/nike-4.png",
+        "img": "nike-4.jpg",
         "size": [
         "s",
         "m",
@@ -59,7 +59,7 @@ export const products = [
         "category": "nike",
         "title": "Nike Air zoom Winflo 7",
         "description": "",
-        "img": "../src/assets/products/nike-1.png",
+        "img": "nike-1.jpg",
         "size": "",
         "price": 3400,
         "outstanding": "",
@@ -70,7 +70,7 @@ export const products = [
         "category": "nike",
         "title": "Nike Free RN 5.0",
         "description": "",
-        "img": "../src/assets/products/nike-2.png",
+        "img": "nike-2.jpg",
         "size": [
         "s"
         ],
@@ -83,7 +83,7 @@ export const products = [
         "category": "nike",
         "title": "Nike Joyrid Run",
         "description": "",
-        "img": "../src/assets/products/nike-3.png",
+        "img": "nike-3.jpg",
         "size": [
         "s",
         "m"
@@ -97,7 +97,7 @@ export const products = [
         "category": "nike",
         "title": "Nike Free RN 5.0",
         "description": "",
-        "img": "../src/assets/products/nike-4.png",
+        "img": "nike-4.jpg",
         "size": [
         "xl"
         ],
@@ -110,7 +110,7 @@ export const products = [
         "category": "nike",
         "title": "Nike Free RN 5.0",
         "description": "",
-        "img": "../src/assets/products/nike-2.png",
+        "img": "nike-2.jpg",
         "size": [
         "s"
         ],
@@ -123,7 +123,7 @@ export const products = [
         "category": "adidas",
         "title": "Adidas Ultraboost",
         "description": "",
-        "img": "../src/assets/products/adidas-2.png",
+        "img": "adidas-2.jpg",
         "size": "",
         "price": 1640,
         "outstanding": "",
@@ -134,7 +134,7 @@ export const products = [
         "category": "adidas",
         "title": "Adidas Ultraboost",
         "description": "",
-        "img": "../src/assets/products/adidas-4.png",
+        "img": "adidas-4.jpg",
         "size": "",
         "price": 3370,
         "outstanding": "",
@@ -145,7 +145,7 @@ export const products = [
         "category": "adidas",
         "title": "Adidas Solar Glide",
         "description": "",
-        "img": "../src/assets/products/adidas-1.png",
+        "img": "adidas-1.jpg",
         "size": "",
         "price": 2850,
         "outstanding": "",
@@ -156,7 +156,7 @@ export const products = [
         "category": "adidas",
         "title": "Adidas PulseBoost",
         "description": "",
-        "img": "../src/assets/products/adidas-2.png",
+        "img": "adidas-2.jpg",
         "size": [
         "chico",
         "mediano",
@@ -171,7 +171,7 @@ export const products = [
         "category": "adidas",
         "title": "Adidas Ultraboost",
         "description": "",
-        "img": "../src/assets/products/adidas-3.png",
+        "img": "adidas-3.jpg",
         "size": "",
         "price": 1870,
         "outstanding": "",
@@ -182,7 +182,7 @@ export const products = [
         "category": "adidas",
         "title": "Adidas Solar Glide",
         "description": "",
-        "img": "../src/assets/products/adidas-4.png",
+        "img": "adidas-4.jpg",
         "size": "",
         "price": 5540,
         "outstanding": "",
@@ -193,7 +193,7 @@ export const products = [
         "category": "adidas",
         "title": "Adidas Boost",
         "description": "",
-        "img": "../src/assets/products/adidas-1.png",
+        "img": "adidas-1.jpg",
         "size": "",
         "price": 180,
         "outstanding": "",
@@ -204,7 +204,7 @@ export const products = [
         "category": "puma",
         "title": "Puma Lqdcell FM",
         "description": "",
-        "img": "../src/assets/products/puma-1.png",
+        "img": "puma-1.jpg",
         "size": [
         "s",
         "m"
@@ -218,7 +218,7 @@ export const products = [
         "category": "puma",
         "title": "Puma NGRY Commet",
         "description": "",
-        "img": "../src/assets/products/puma-2.png",
+        "img": "puma-2.jpg",
         "size": "",
         "price": 1040,
         "outstanding": "",
@@ -229,7 +229,7 @@ export const products = [
         "category": "puma",
         "title": "Puma cell 235",
         "description": "",
-        "img": "../src/assets/products/puma-3.png",
+        "img": "puma-3.jpg",
         "size": "",
         "price": 60,
         "outstanding": "",
@@ -240,7 +240,7 @@ export const products = [
         "category": "puma",
         "title": "Puma x12d",
         "description": "",
-        "img": "../src/assets/products/puma-4.png",
+        "img": "puma-4.jpg",
         "size": [
         "m"
         ],
@@ -253,7 +253,7 @@ export const products = [
         "category": "puma",
         "title": "Puma cell 235",
         "description": "",
-        "img": "../src/assets/products/puma-1.png",
+        "img": "puma-1.jpg",
         "size": [
         "s",
         "m",
@@ -268,7 +268,7 @@ export const products = [
         "category": "puma",
         "title": "Puma x12d",
         "description": "",
-        "img": "../src/assets/products/puma-2.png",
+        "img": "puma-2.jpg",
         "size": [
         "xs",
         "s",
@@ -285,7 +285,7 @@ export const products = [
         "category": "puma",
         "title": "Puma cell 235",
         "description": "",
-        "img": "../src/assets/products/puma-3.png",
+        "img": "puma-3.jpg",
         "size": [
         "s",
         "m"
@@ -299,7 +299,7 @@ export const products = [
         "category": "puma",
         "title": "Puma x12d",
         "description": "",
-        "img": "../src/assets/products/puma-2.png",
+        "img": "puma-2.jpg",
         "size": [
         "xs",
         "s",
