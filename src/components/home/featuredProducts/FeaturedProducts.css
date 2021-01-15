@@ -10,12 +10,11 @@
 }
 
 .featuredProducts ul {
-  display: flex;
-  justify-content: space-between;
-}
-
-.featuredProducts ul li {
-  width: 20%;
+    display: flex;
+    justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 2rem;
 }
 
 .cargando {
