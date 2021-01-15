@@ -21,9 +21,10 @@ const ListProduct = ({products}) => {
                     products.map(item => 
                     <li key={item.id}>
                         <ProductCard id={item.id} 
-                            titulo={item.title} 
-                            precio={item.price} 
-                            categoria={item.category}
+                            titulo={item.data.title} 
+                            precio={item.data.price} 
+                            categoria={item.data.category}
+                            img={item.data.img}
                             type={`${wayToShow ? 'grid' : 'list'}`} />
                     </li>)
                 }
