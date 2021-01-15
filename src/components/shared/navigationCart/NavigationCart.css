@@ -1,0 +1,27 @@
+.navCart {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    cursor: pointer;
+}
+
+.navCart svg {
+    color: var(--color-secundario);
+    font-size: 1.5rem;
+}
+
+.navCart span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    width: 1.2rem;
+    height: 1.2rem;
+    font-size: 0.8rem;
+    position: absolute;
+    right: -0.8rem;
+    top: -0.6rem;
+    background: var(--color-secundario);
+    line-height: 0;
+    color: var(--blanco);
+}

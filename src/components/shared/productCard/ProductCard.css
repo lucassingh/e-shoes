@@ -1,0 +1,86 @@
+.productCard {
+  background: var(--blanco);
+  border-radius: 1.5rem;
+  box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.2);
+  transition: box-shadow 0.5s;
+  height: 100%;
+  position: relative;
+}
+
+.productCard:hover {
+  box-shadow: 0 0 0.8rem rgba(0, 0, 0, 0.25);
+}
+
+.productCard img {
+  width: 100%;
+  border-top-left-radius: 1.5rem;
+  border-top-right-radius: 1.5rem;
+}
+
+.productCard div {
+  padding: 1rem;
+  text-align: center;
+}
+
+.productCard div h3 {
+  color: var(--text);
+  font-size: 1.3rem;
+  min-height: 46px;
+}
+
+.productCard div p {
+  color: var(--text);
+  font-size: 2rem;
+}
+
+.cont-button {
+    display: flex;
+    justify-content: center;
+}
+
+.productCard div a {
+    display: block;
+    transition: background 0.5s;
+    width: 200px;
+    outline: none;
+    background: var(--color-principal);
+    color:  #fff;
+    border-radius: 50px;
+    border: none;
+    padding: 0;
+    height: 35px;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+}
+
+.productCard div a:hover {
+  background: var(--color-secundario);
+}
+
+.productCard.list {
+  display: flex;
+  align-items: center;
+}
+
+.productCard.list img {
+  width: 20%;
+  border-bottom-left-radius: 1.5rem;
+  border-top-right-radius: 0;
+}
+
+.productCard.list div {
+  display: grid;
+  align-items: center;
+  grid-template-columns: 3fr 1fr 2fr;
+  flex: 1;
+}
+
+.productCard.list div h3 {
+  margin: 0;
+  min-height: auto;
+  text-align: left;
+  font-size: 2rem;
+}
