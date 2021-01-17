@@ -1,0 +1,138 @@
+.puma-container {
+	 height: 90vh;
+	 width: 100%;
+	 display: flex;
+	 justify-content: center;
+	 flex-direction: column;
+}
+ .puma-sneaker {
+	 margin-top: 10rem;
+	 display: flex;
+	 align-items: flex-end;
+	 justify-content: center;
+}
+ .puma-sneaker img {
+	 width: 17rem;
+	 margin-left: -33px;
+	 margin-top: 55px;
+}
+ .puma-circle {
+	 width: 12rem;
+	 height: 15rem;
+	 background: linear-gradient(to right, #0057ff, #0ff);
+	 position: absolute;
+	 border-radius: 50%;
+}
+ .puma-container-info {
+	 display: flex;
+	 flex-direction: column;
+	 justify-content: center;
+	 align-items: center;
+	 padding: 2rem 3rem 2rem 2rem;
+}
+ .puma-container-info .puma-title {
+	 color: #0057ff;
+	 font-size: 2rem;
+}
+ .puma-container-info .puma-text {
+	 color: #000;
+	 font-size: 0.8rem;
+	 font-weight: 300;
+}
+ .puma-container-info .puma-button-shop {
+	 width: 160px;
+	 outline: none;
+	 background: #dc5cbd;
+	 color: #fff;
+	 border-radius: 50px;
+	 padding: 0;
+	 border: none;
+	 margin-top: 20px;
+	 padding: 0.8rem;
+	 font-size: 15px;
+}
+ .puma-container-info .puma-button-shop:hover {
+	 background: #0057ff;
+	 transition: all 0.2s ease-out;
+	 cursor: pointer;
+}
+ @media screen and (min-width: 768px) {
+	 .puma-container {
+		 height: 55vh;
+		 display: flex;
+		 justify-content: center;
+		 flex-direction: row;
+	}
+	 .puma-sneaker {
+		 width: 50%;
+		 display: flex;
+		 align-items: flex-end;
+		 justify-content: center;
+		 align-items: center;
+		 margin-top: 0;
+	}
+	 .puma-sneaker img {
+		 width: 17rem;
+		 margin-left: -33px;
+	}
+	 .puma-circle {
+		 width: 9rem;
+		 height: 12rem;
+		 border-radius: 50%;
+	}
+	 .puma-container-info {
+		 width: 50%;
+		 display: flex;
+		 flex-direction: column;
+		 justify-content: center;
+		 padding: 2rem 3rem 2rem 2rem;
+	}
+	 .puma-container-info .puma-title {
+		 font-size: 2rem;
+	}
+	 .puma-container-info .puma-text {
+		 font-size: 0.8rem;
+	}
+}
+ @media screen and (min-width: 1400px) {
+	 .puma-sneaker img {
+		 width: 25rem;
+		 margin-left: -67px;
+	}
+	 .puma-circle {
+		 width: 18rem;
+		 height: 18rem;
+	}
+	 .puma-container-info {
+		 padding: 2rem 9rem 2rem 2rem;
+	}
+	 .puma-container-info .puma-title {
+		 font-size: 2.2rem;
+	}
+	 .puma-container-info .puma-text {
+		 font-size: 1rem;
+	}
+}
+ @media screen and (min-width: 1600px) {
+	 .puma-sneaker img {
+		 width: 30rem;
+		 margin-left: -70px;
+		 margin-top: 60px;
+	}
+	 .puma-circle {
+		 width: 18rem;
+		 height: 24rem;
+	}
+	 .puma-container-info {
+		 padding: 2rem 15rem 2rem 2rem;
+	}
+	 .puma-container-info .puma-title {
+		 font-size: 2.7rem;
+		 margin-bottom: 10px;
+	}
+	 .puma-container-info .puma-text {
+		 font-size: 1rem;
+		 margin-bottom: 10px;
+	}
+}
+ 

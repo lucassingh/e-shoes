@@ -5,7 +5,10 @@
 }
 
 .product .foto img {
-  width: 100%;
+    width: 100%;
+    width: 100%;
+    border: 1px solid #eeeeee;
+    border-radius: 15px;
 }
 
 .product .info .title {
