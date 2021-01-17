@@ -18,7 +18,6 @@ const CardDetail = ({item}) => {
         setData({
             ...data, 
             cantidad: data.cantidad + qty,
-            items: [...data.items, item],
             items: [...data.items, {item: item, cantidad: qty}],
             precioTotal: data.precioTotal + (item.price * qty)
         });
@@ -31,7 +30,7 @@ const CardDetail = ({item}) => {
     return (
         <article className="product">
             <div className="foto">
-                <img src={`/assets/products/${item.img}`} alt=""/>
+                <img src={`/assets/products/${item.img}`} alt="imagen producto detalle"/>
             </div>
 
             <div className="info">

@@ -2,7 +2,7 @@ import {useEffect, useState} from 'react';
 import {useParams, Link} from 'react-router-dom';
 import CardDetail from './cardDetail/CardDetail';
 import './ProductDetail.css';
-import {getFirestore} from '../../db';
+import {getFirestore} from '../../db/index';
 import Loader from '../shared/loader/Loader';
 
 const ProductDetail = () => {
@@ -18,6 +18,7 @@ const ProductDetail = () => {
             }
         })
         .catch(e => console.log(e));
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     return (

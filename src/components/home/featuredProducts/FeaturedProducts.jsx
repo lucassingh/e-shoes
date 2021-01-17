@@ -1,7 +1,7 @@
 import {useState, useEffect, memo} from 'react';
 import ProductCard from '../../shared/productCard/ProductCard';
 import './FeaturedProducts.css';
-import {getFirestore} from '../../../db';
+import {getFirestore} from '../../../db/index';
 import Loader from '../../shared/loader/Loader';
 
 const FeaturedProducts = () => {
