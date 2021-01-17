@@ -8,8 +8,12 @@ const WidgetCart = ({show, action}) => {
     return (
         <div className={`widgetCart ${show ? 'open' : 'close'}`}>
             {
-                data.items.map(item => <p>{item.title}</p>)
-            }
+                data.items.map((item, index) => {
+
+                return(
+                    <p key={ index }>{item.title}</p>
+                )
+            })}
             <button onClick={action}>Cerrar widget</button>
         </div>
     )
