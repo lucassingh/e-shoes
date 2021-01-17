@@ -2,6 +2,7 @@ import {useState, useContext} from 'react';
 import {Store} from '../../store/context-data';
 import { getFirestore } from '../../db/index';
 import './Payment.css';
+import './Form.css';
 import  firebase from 'firebase/app';
 
 const Payment = () => {
@@ -60,46 +61,83 @@ const Payment = () => {
             {
                 !venta ?
                     <div>
-                        <h3>Step {count} of 3</h3>
+                        <h3>Paso {count} de 3</h3>
                         <form onSubmit={handleSubmitForm}>
                             {count === 1 ? (
+                            <>
+                                <h5>Datos personales</h5>
                                 <div className="form-group">
-                                    <input 
-                                    type="text" 
-                                    name="nombre" 
-                                    value={formData.nombre} 
-                                    placeholder="Nombre"
-                                    onChange={handleInputChange}/>
-                                    <input 
-                                        type="text" 
+                                    <div class="material-form-field">
+                                        <input type="text" 
+                                            required 
+                                            name="nombre" 
+                                            id="field-text"
+                                            value={formData.nombre}
+                                            onChange={handleInputChange}/>
+                                        <label class="material-form-field-label" 
+                                            for="field-text">
+                                            Nombre
+                                        </label>
+                                    </div>
+                                    <div class="material-form-field">
+                                        <input type="text" 
+                                        required
                                         name="apellido" 
-                                        value={formData.apellido} placeholder="Apellido"
+                                        value={formData.apellido}
                                         onChange={handleInputChange}/>
-                                    <input 
-                                        type="email" 
-                                        name="email" 
-                                        value={formData.email} 
-                                        placeholder="E-mail"
-                                        onChange={handleInputChange}/>
-                                    <input 
-                                        type="tel" 
+                                        <label class="material-form-field-label" 
+                                            for="field-text">
+                                            Apellido
+                                        </label>
+                                    </div>
+
+                                    <div class="material-form-field">
+                                        <input type="email" 
+                                            required 
+                                            name="email" 
+                                            id="field-text"
+                                            value={formData.email}
+                                            onChange={handleInputChange}/>
+                                        <label class="material-form-field-label" 
+                                            for="field-text">
+                                            Email
+                                        </label>
+                                    </div>
+                                    <div class="material-form-field">
+                                        <input type="tel" 
+                                        required
                                         name="tel" 
-                                        value={formData.tel} 
-                                        placeholder="Teléfono"
+                                        value={formData.tel}
                                         onChange={handleInputChange}/>
+                                        <label class="material-form-field-label" 
+                                            for="field-text">
+                                            Teléfono
+                                        </label>
+                                    </div>
                                 </div>
+                            </>
                             ) : null}
                             {count === 2 ? (
-                                <div className="form-group">
-                                    <label>Name</label>
-                                    <input
-                                    type="text"
-                                    className="form-control"
-                                    name="name"
-                                    onChange={updateForm}
-                                    value={formData.name}
-                                    />
-                                </div>
+                                <>
+                                    <h5>Datos tarjeta de credito</h5>
+                                    <div className="form-group">
+                                        <div class="material-form-field">
+                                            <input
+                                            type="text"
+                                            className="form-control"
+                                            name="name"
+                                            onChange={handleInputChange}
+                                            value={formData.name}
+                                            />
+                                            <label class="material-form-field-label" 
+                                                for="field-text">
+                                                Teléfono
+                                            </label>
+                                        </div>
+                                        
+                                        
+                                    </div>
+                                </>
                             ) : null}
                             {count === 3 ? (
                                 <div className="form-group">
@@ -119,22 +157,26 @@ const Payment = () => {
                                 </button>
                             ) : null}
                         </form>
-                        <button
-                            className="btn btn-dark"
-                            type="submit"
-                            onClick={() => setCount(count - 1)}
-                            disabled={count < 2}
-                        >
-                            Back
-                        </button>
-                        <button
-                            className="btn btn-light"
-                            type="submit"
-                            onClick={() => setCount(count + 1)}
-                            disabled={count > 2}
-                        >
-                            Next
-                        </button>
+                        <div className="container-button-form">
+                            <button
+                                className="btn-back"
+                                type="submit"
+                                onClick={() => setCount(count - 1)}
+                                disabled={count < 2}
+                            >
+                                Anterior
+                            </button>
+                            <button
+                                className="btn-next"
+                                type="submit"
+                                onClick={() => setCount(count + 1)}
+                                disabled={count > 2}
+                            >
+                                Siguiente
+                            </button>
+
+                        </div>
+                        
                     </div>:
                 <p>La compra se realizo correctamente. tu numero de seguimiento es: {trackEnvio}</p>
             }
