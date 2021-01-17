@@ -22,7 +22,6 @@ const Category = () => {
                 response.forEach(doc => {
                     arr.push({id: doc.id, data: doc.data()})
                 })
-                console.log(category_name)
                 setProds(arr);
             })
         }
