@@ -1,5 +1,7 @@
 import Slider from './slider/Slider'
 import FeaturedProducts from './featuredProducts/FeaturedProducts'
+import News from './../shared/news/News';
+import { NewsHome } from './../shared/news/NewsData';
 
 const Home = () => {
 
@@ -7,6 +9,7 @@ const Home = () => {
         <>
             <Slider />
             <FeaturedProducts/>
+            <News data={NewsHome}/>
         </>
     )
 }

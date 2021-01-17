@@ -6,6 +6,8 @@ import { getFirestore } from '../../db/index';
 import NikeJumbotron from './../shared/jumbotron/nikejumbotron/NikeJumbotron';
 import AdidasJumbotron from './../shared/jumbotron/adidasJumbotron/AdidasJumbotron';
 import PumaJumbotron from './../shared/jumbotron/pumaJumbotron/PumaJumbotron';
+import News from '../shared/news/News';
+import { NewsNike, NewsAdidas, NewsPuma } from './../shared/news/NewsData';
 
 const Category = () => {
     const {category_name} = useParams();
@@ -36,11 +38,26 @@ const Category = () => {
         }
     }
 
+    const newsCategory = () => {
+      switch(category_name) {
+            case 'nike':   return <News data={NewsNike}/>;
+            case "adidas":   return <News data={NewsAdidas}/>;
+            case "puma": return <News data={NewsPuma}/>;
+            default:      return <h1>No category match</h1>
+        }
+    }
+
     return (
-        <section className="category">
+        <>
             {jumbotronCategory()}
-            <ListProduct products={prods} />
-        </section>
+
+            <section className="category">
+                <h2>Shop {category_name.split('-').join(' ')}</h2>
+                <ListProduct products={prods} />
+            </section>
+
+            {newsCategory()}
+        </>
     )
 }
 

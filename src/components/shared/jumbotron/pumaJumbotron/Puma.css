@@ -1,5 +1,5 @@
 .puma-container {
-	 height: 90vh;
+	 height: 65vh;
 	 width: 100%;
 	 display: flex;
 	 justify-content: center;
@@ -58,7 +58,8 @@
 }
  @media screen and (min-width: 768px) {
 	 .puma-container {
-		 height: 55vh;
+		 /*height: 55vh;*/
+         border-bottom: 1px solid #eeeeee;
 		 display: flex;
 		 justify-content: center;
 		 flex-direction: row;
