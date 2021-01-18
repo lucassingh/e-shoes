@@ -83,7 +83,7 @@
 
 .button-compra:hover {
     background: var(--color-secundario);
-    cursor: pointer;    
+    cursor: pointer;
 }
 
 .precio-total {
