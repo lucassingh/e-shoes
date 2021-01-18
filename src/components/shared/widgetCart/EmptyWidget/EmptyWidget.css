@@ -1,0 +1,15 @@
+.compra-container-widget {
+    width: 100%;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1%;
+}
+
+.img-container-widget {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}

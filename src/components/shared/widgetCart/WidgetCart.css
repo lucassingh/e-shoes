@@ -1,14 +1,106 @@
 .widgetCart {
-  height: 20vh;
+  height: auto;
   width: 100%;
   position: fixed;
   left: 0;
   background: var(--blanco);
   z-index: 2;
   box-shadow: -0.3rem 0 0.3rem rgba(0, 0, 0, 0.2);
+        padding-bottom: 1rem;
   transition: all 1.5s ease;
 }
 
 .close {
   top: 100%;
 }
+
+.container-card-widget {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.container-card-widget li {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    margin-top: 1rem;
+    border: 1px solid #eeeeee;
+    border-radius: 10px;
+}
+
+.img-widget {
+    width: 100px;
+    border-radius: 10px 0 0 10px;
+    border-right: 1px solid #eeeeee;
+}
+
+.cont-info-widget {
+    margin-left: 20px;
+}
+
+.cont-info-widget h2 {
+    color: #0057ff;
+    font-size: 15px;
+}
+
+.p-widget-text {
+    font-size: 12px;
+}
+
+.button-widget {
+    margin-right: 0;
+    position: absolute;
+    right: 8%;
+    top: 8%;
+    cursor: pointer;
+}
+
+.cont-final-widget {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cont-card-final-widget {
+    width: 15%;
+    padding: 1%;
+    border: 1px solid #eeeeee;
+    border-radius: 10px;
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.icon-widget {
+    width: 30%;
+    margin-bottom: 10px;
+}
+
+.button-compra-widget {
+    width: 150px;
+    outline: none;
+    background: var(--color-principal);
+    color:  #fff;
+    border-radius: 50px;
+    border: none;
+    padding: 0;
+    height: 35px;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    margin-top: 1rem;
+}
+
+.button-compra-widget:hover {
+    background: var(--color-secundario);
+    cursor: pointer;
+}
+    
