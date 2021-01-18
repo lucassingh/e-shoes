@@ -7,7 +7,7 @@ import {Link} from 'react-router-dom';
 const WidgetCart = ({show, action}) => {
     const [data] = useContext(Store);
 
-    console.log(data)
+    //console.log(data)
 
     return (
         <div className={`widgetCart ${show ? 'open' : 'close'}`}>
