@@ -34,7 +34,7 @@ h5 {
 
 .container-button-form .btn-back {
     transition: background 0.5s;
-    width: 120px;
+    width: 80px;
     outline: none;
     background: var(--color-principal);
     color:  #fff;
@@ -46,12 +46,39 @@ h5 {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 14px;
+    font-size: 12px;
+    cursor: pointer;
 }
 
 .container-button-form .btn-next {
     transition: background 0.5s;
-    width: 120px;
+    width: 80px;
+    outline: none;
+    background: var(--color-principal);
+    color:  #fff;
+    border-radius: 50px;
+    border: none;
+    padding: 0;
+    height: 35px;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    margin-left: 1rem;
+    cursor: pointer;
+}
+
+.container-button-submit {
+    width: 100%;
+    margin-top: 1rem;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.btn-comprar {
+    transition: background 0.5s;
+    width: 200px;
     outline: none;
     background: var(--color-principal);
     color:  #fff;
@@ -67,17 +94,27 @@ h5 {
     margin-left: 1rem;
 }
 
+.btn-comprar:hover {
+    background: var(--color-secundario);
+    cursor: pointer;
+}
+
 .container-button-form .btn-back:disabled {
   background: #ddd;
   cursor: no-drop;
 }
 
-.container-button-form .btn-back:hover {
-    background: var(--color-secundario);
-    cursor: pointer;
+.container-button-form .btn-next:disabled {
+  background: #ddd;
+  cursor: no-drop;
 }
 
-.container-button-form .btn-next:hover {
-    background: var(--color-secundario);
-    cursor: pointer;
+.container-credit-form {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.form-grup-card {
+    width: 100%;
+    margin-right: 20px;
 }

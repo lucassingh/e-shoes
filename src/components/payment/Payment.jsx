@@ -1,9 +1,12 @@
 import {useState, useContext} from 'react';
 import {Store} from '../../store/context-data';
 import { getFirestore } from '../../db/index';
+import Cards from 'react-credit-cards';
+import 'react-credit-cards/es/styles-compiled.css';
 import './Payment.css';
 import './Form.css';
 import  firebase from 'firebase/app';
+import Compra from './compraExitosa/CompraExitosa';
 
 const Payment = () => {
 
@@ -11,7 +14,7 @@ const Payment = () => {
 
     const [data] = useContext(Store);
 
-    const [ venta, setVenta ] = useState(false);
+    const [venta, setVenta] = useState(false);
 
     const [trackEnvio, setTrackEnvio ] = useState('');
 
@@ -19,8 +22,19 @@ const Payment = () => {
         nombre: '',
         apellido: '',
         email: '',
-        tel: ''
+        tel: '',
+        localidad: '',
+        calle: '',
+        numero: '',
+        cPostal: ''
     })
+
+    const [number, setNumber] = useState('');
+    const [name, setName] = useState('');
+    const [expiry, setExpiry] = useState('');
+    const [cvc, setCvc] = useState('');
+    const [focus, setFocus] = useState('');
+
 
     const handleInputChange = (e) => {
         setFormData({...formData, [e.target.name]: e.target.value});
@@ -28,12 +42,12 @@ const Payment = () => {
 
     const [count, setCount] = useState(1)
 
-    const updateForm = (e) => {
+    /* const updateForm = (e) => {
         setFormData({
             ...formData,
             [e.target.name]: e.target.value,
         })
-    }
+    }*/
 
     const compra = {
         user: formData,
@@ -48,10 +62,9 @@ const Payment = () => {
         .then(({id}) => {
             setVenta(true);
             setTrackEnvio(id);
-            console.log(id);
         })
         .catch(err => console.log(err))
-    }    
+    }
 
     return (
         <section className="checkout">
@@ -64,97 +77,159 @@ const Payment = () => {
                         <h3>Paso {count} de 3</h3>
                         <form onSubmit={handleSubmitForm}>
                             {count === 1 ? (
-                            <>
-                                <h5>Datos personales</h5>
-                                <div className="form-group">
-                                    <div class="material-form-field">
-                                        <input type="text" 
-                                            required 
-                                            name="nombre" 
-                                            id="field-text"
-                                            value={formData.nombre}
+                                <>
+                                    <h5>Datos personales</h5>
+                                    <div className="form-group">
+                                        <div className="material-form-field">
+                                            <input type="text"
+                                                name="nombre" 
+                                                id="field-text"
+                                                value={formData.nombre}
+                                                onChange={handleInputChange}/>
+                                            <label className="material-form-field-label">
+                                                Nombre
+                                            </label>
+                                        </div>
+                                        <div className="material-form-field">
+                                            <input type="text"
+                                            name="apellido" 
+                                            value={formData.apellido}
                                             onChange={handleInputChange}/>
-                                        <label class="material-form-field-label" 
-                                            for="field-text">
-                                            Nombre
-                                        </label>
-                                    </div>
-                                    <div class="material-form-field">
-                                        <input type="text" 
-                                        required
-                                        name="apellido" 
-                                        value={formData.apellido}
-                                        onChange={handleInputChange}/>
-                                        <label class="material-form-field-label" 
-                                            for="field-text">
-                                            Apellido
-                                        </label>
-                                    </div>
+                                            <label className="material-form-field-label">
+                                                Apellido
+                                            </label>
+                                        </div>
 
-                                    <div class="material-form-field">
-                                        <input type="email" 
-                                            required 
-                                            name="email" 
-                                            id="field-text"
-                                            value={formData.email}
+                                        <div className="material-form-field">
+                                            <input type="email" 
+                                                name="email"
+                                                value={formData.email}
+                                                onChange={handleInputChange}/>
+                                            <label className="material-form-field-label">
+                                                Email
+                                            </label>
+                                        </div>
+                                        <div className="material-form-field">
+                                            <input type="tel"
+                                            name="tel" 
+                                            value={formData.tel}
                                             onChange={handleInputChange}/>
-                                        <label class="material-form-field-label" 
-                                            for="field-text">
-                                            Email
-                                        </label>
+                                            <label className="material-form-field-label">
+                                                Teléfono
+                                            </label>
+                                        </div>
                                     </div>
-                                    <div class="material-form-field">
-                                        <input type="tel" 
-                                        required
-                                        name="tel" 
-                                        value={formData.tel}
-                                        onChange={handleInputChange}/>
-                                        <label class="material-form-field-label" 
-                                            for="field-text">
-                                            Teléfono
-                                        </label>
-                                    </div>
-                                </div>
-                            </>
+                                </>
                             ) : null}
                             {count === 2 ? (
                                 <>
                                     <h5>Datos tarjeta de credito</h5>
-                                    <div className="form-group">
-                                        <div class="material-form-field">
-                                            <input
-                                            type="text"
-                                            className="form-control"
-                                            name="name"
-                                            onChange={handleInputChange}
-                                            value={formData.name}
-                                            />
-                                            <label class="material-form-field-label" 
-                                                for="field-text">
-                                                Teléfono
-                                            </label>
+                                    <div className="container-credit-form">                                    
+                                        <Cards
+                                            cvc={cvc}
+                                            expiry={expiry}
+                                            focused={focus}
+                                            name={name}
+                                            number={number}
+                                        />
+                                        <div className="form-group form-grup-card">
+                                            <div className="material-form-field">
+                                                <input type="tel"
+                                                    name="number"
+                                                    placeholder="Ej: 4111236523232323"
+                                                    value={number}
+                                                    onChange={e => setNumber(e.target.value)}
+                                                    onFocus={e => setFocus(e.target.name)}/>
+                                                <label className="material-form-field-label">
+                                                    Número Tarjeta
+                                                </label>
+                                            </div>                                        
+                                            <div className="material-form-field">
+                                                <input type="text"
+                                                    name="name"
+                                                    placeholder="Ej: Juan Pérez"
+                                                    value={name}
+                                                    onChange={e => setName(e.target.value)}
+                                                    onFocus={e => setFocus(e.target.name)}/>
+                                                <label className="material-form-field-label">
+                                                    Nombre Tarjeta
+                                                </label>
+                                            </div>                                       
+                                            <div className="material-form-field">
+                                                <input type="text"
+                                                    name="expiry"
+                                                    value={expiry}
+                                                    placeholder="Ej: 04/24"
+                                                    onChange={e => setExpiry(e.target.value)}
+                                                    onFocus={e => setFocus(e.target.name)}/>
+                                                <label className="material-form-field-label">
+                                                    Fecha Expiración
+                                                </label>
+                                            </div>                                       
+                                            <div className="material-form-field">
+                                                <input type="tel"
+                                                    name="cvc"
+                                                    placeholder="Ej: 123"
+                                                    value={cvc}
+                                                    onChange={e => setCvc(e.target.value)}
+                                                    onFocus={e => setFocus(e.target.name)}/>
+                                                <label className="material-form-field-label">
+                                                    CVC
+                                                </label>
+                                            </div>
                                         </div>
-                                        
-                                        
                                     </div>
                                 </>
                             ) : null}
                             {count === 3 ? (
-                                <div className="form-group">
-                                    <label>Password</label>
-                                    <input
-                                    type="password"
-                                    className="form-control"
-                                    name="password"
-                                    onChange={updateForm}
-                                    value={formData.password}
-                                    />
-                                </div>
+                                <>
+                                    <h5>Datos de Envío</h5>
+                                    <div className="form-group">
+                                        <div className="material-form-field">
+                                            <input type="text"
+                                                name="localidad"
+                                                value={formData.localidad}
+                                                onChange={handleInputChange}/>
+                                            <label className="material-form-field-label">
+                                                Localidad
+                                            </label>
+                                        </div>
+                                        <div className="material-form-field">
+                                            <input type="text"
+                                                name="calle"
+                                                value={formData.calle}
+                                                onChange={handleInputChange}/>
+                                            <label className="material-form-field-label">
+                                                Calle
+                                            </label>
+                                        </div>
+                                        <div className="material-form-field">
+                                            <input type="text"
+                                                name="numero"
+                                                value={formData.numero}
+                                                onChange={handleInputChange}/>
+                                            <label className="material-form-field-label">
+                                                Número
+                                            </label>
+                                        </div>
+                                        <div className="material-form-field">
+                                        <input type="text"
+                                            name="cPostal"
+                                            value={formData.cPostal}
+                                            onChange={handleInputChange}/>
+                                        <label className="material-form-field-label">
+                                            Código Postal
+                                        </label>
+                                    </div>
+                                    </div>                                
+                                </>
                             ) : null}
                             {count === 3 ? (
-                                <button className="btn btn-primary" type="submit">
-                                    Submit
-                                </button>
+                                <div className="container-button-submit">
+                                    <button className="btn-comprar" type="submit">
+                                        Comprar
+                                    </button>
+                                </div>
                             ) : null}
                         </form>
                         <div className="container-button-form">
@@ -174,11 +249,9 @@ const Payment = () => {
                             >
                                 Siguiente
                             </button>
-
-                        </div>
-                        
+                        </div>                        
                     </div>:
-                <p>La compra se realizo correctamente. tu numero de seguimiento es: {trackEnvio}</p>
+                <Compra idCompra={trackEnvio}/>
             }
             </div>            
         </section>
