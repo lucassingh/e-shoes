@@ -25,7 +25,7 @@ const CardDetail = ({item}) => {
         // alert(`Agregaste ${qty} productos al carrito`);	
     }
     
-    console.log(data);
+    //console.log(data);
 
     return (
         <article className="product">

@@ -21,7 +21,8 @@ var products = [
         ],
         "price": 3630,
         "outstanding": true,
-        "discount": ""
+        "discount": "",
+        "suggested": true
     },
     {
         "id": 2,
@@ -35,7 +36,8 @@ var products = [
         ],
         "price": 6350,
         "outstanding": "",
-        "discount": 15
+        "discount": 15,
+        "suggested": ""
     },
     {
         "id": 3,
@@ -46,7 +48,8 @@ var products = [
         "size": "",
         "price": 4170,
         "outstanding": true,
-        "discount": 15
+        "discount": 15,
+        "suggested": ""
     },
     {
         "id": 4,
@@ -63,7 +66,8 @@ var products = [
         ],
         "price": 5590,
         "outstanding": true,
-        "discount": 20
+        "discount": 20,
+        "suggested": ""
     },
     {
         "id": 5,
@@ -74,7 +78,8 @@ var products = [
         "size": "",
         "price": 3400,
         "outstanding": true,
-        "discount": 15
+        "discount": 15,
+        "suggested": ""
     },
     {
         "id": 6,
@@ -87,7 +92,8 @@ var products = [
         ],
         "price": 5900,
         "outstanding": "",
-        "discount": 15
+        "discount": 15,
+        "suggested": ""
     },
     {
         "id": 7,
@@ -102,6 +108,7 @@ var products = [
         "price": 3610,
         "outstanding": "",
         "discount": ""
+
     },
     {
         "id": 8,
@@ -114,7 +121,8 @@ var products = [
         ],
         "price": 9000,
         "outstanding": "",
-        "discount": 20
+        "discount": 20,
+        "suggested": true
     },
     {
         "id": 9,
@@ -127,7 +135,8 @@ var products = [
         ],
         "price": 5900,
         "outstanding": "",
-        "discount": 15
+        "discount": 15,
+        "suggested": ""
     },
     {
         "id": 10,
@@ -138,7 +147,8 @@ var products = [
         "size": "",
         "price": 1640,
         "outstanding": true,
-        "discount": ""
+        "discount": "",
+        "suggested": true
     },
     {
         "id": 11,
@@ -149,7 +159,8 @@ var products = [
         "size": "",
         "price": 3370,
         "outstanding": "",
-        "discount": ""
+        "discount": "",
+        "suggested": ""
     },
     {
         "id": 12,
@@ -160,7 +171,8 @@ var products = [
         "size": "",
         "price": 2850,
         "outstanding": true,
-        "discount": ""
+        "discount": "",
+        "suggested": ""
     },
     {
         "id": 13,
@@ -175,7 +187,8 @@ var products = [
         ],
         "price": 3340,
         "outstanding": true,
-        "discount": 30
+        "discount": 30,
+        "suggested": ""
     },
     {
         "id": 14,
@@ -186,7 +199,8 @@ var products = [
         "size": "",
         "price": 1870,
         "outstanding": "",
-        "discount": ""
+        "discount": "",
+        "suggested": ""
     },
     {
         "id": 15,
@@ -197,7 +211,8 @@ var products = [
         "size": "",
         "price": 5540,
         "outstanding": true,
-        "discount": ""
+        "discount": "",
+        "suggested": ""
     },
     {
         "id": 16,
@@ -208,7 +223,8 @@ var products = [
         "size": "",
         "price": 180,
         "outstanding": "",
-        "discount": ""
+        "discount": "",
+        "suggested": ""
     },
     {
         "id": 17,
@@ -222,7 +238,8 @@ var products = [
         ],
         "price": 690,
         "outstanding": true,
-        "discount": ""
+        "discount": "",
+        "suggested": ""
     },
     {
         "id": 18,
@@ -244,7 +261,8 @@ var products = [
         "size": "",
         "price": 60,
         "outstanding": "",
-        "discount": ""
+        "discount": "",
+        "suggested": true
     },
     {
         "id": 20,
@@ -257,7 +275,8 @@ var products = [
         ],
         "price": 1150,
         "outstanding": true,
-        "discount": 15
+        "discount": 15,
+        "suggested": ""
     },
     {
         "id": 21,
@@ -272,7 +291,8 @@ var products = [
         ],
         "price": 3090,
         "outstanding": "",
-        "discount": ""
+        "discount": "",
+        "suggested": ""
     },
     {
         "id": 22,
@@ -289,7 +309,8 @@ var products = [
         ],
         "price": 3740,
         "outstanding": true,
-        "discount": ""
+        "discount": "",
+        "suggested": ""
     },
     {
         "id": 23,
@@ -303,7 +324,8 @@ var products = [
         ],
         "price": 860,
         "outstanding": "",
-        "discount": 30
+        "discount": 30,
+        "suggested": ""
     },
     {
         "id": 24,
@@ -320,7 +342,8 @@ var products = [
         ],
         "price": 3740,
         "outstanding": true,
-        "discount": ""
+        "discount": "",
+        "suggested": ""
     }
 ];
 

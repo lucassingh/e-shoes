@@ -23,3 +23,9 @@
   color: var(--text);
   text-decoration: underline;
 }
+
+
+.container-info-detail {
+    width: 100%;
+    padding: 3% 19% 0% 19%;
+}

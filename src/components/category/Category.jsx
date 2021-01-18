@@ -11,7 +11,9 @@ import { NewsNike, NewsAdidas, NewsPuma } from './../shared/news/NewsData';
 
 const Category = () => {
     const {category_name} = useParams();
-    const [prods, setProds] = useState([]);
+
+    const [prods, setProds] = useState([]);    
+
     const db = getFirestore();
 
     useEffect(() => {
