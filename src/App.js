@@ -10,6 +10,7 @@ import Home from './components/home/Home';
 import { FooterContainer } from './components/shared/footer/containers/FooterContainer';
 import Newsletter from './components/shared/newsletter/Newsletter';
 import Payment from './components/payment/Payment';
+import ErrorPage from './components/404-error/ErrorPage';
 
 function App() {
     const [data, setData] = useState({
@@ -39,6 +40,9 @@ function App() {
                     </Route>
                     <Route exact path="/:category_name/:id">
                         <ProductDetail/>
+                    </Route>
+                    <Route path="*">
+                        <ErrorPage />
                     </Route>
                 </Switch>
                 <Newsletter/>
