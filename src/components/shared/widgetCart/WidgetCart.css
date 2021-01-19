@@ -39,6 +39,11 @@
 
 .cont-info-widget {
     margin-left: 20px;
+    width: 84%;
+}
+
+.icon-close-widget {
+    margin-top: 0;
 }
 
 .cont-info-widget h2 {

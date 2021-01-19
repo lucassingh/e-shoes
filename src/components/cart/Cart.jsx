@@ -3,10 +3,20 @@ import {Store} from '../../store/context-data';
 import './Cart.css';
 import {Link} from 'react-router-dom';
 import EmptyCart from './emptyCart/EmptyCart';
-
+import { getFirestore } from '../../db/index';
 
 const Cart = () => {
     const [data] = useContext(Store);
+
+    const db = getFirestore();
+
+    const handleDeleteItem = () => {
+        db.collection('products').doc().delete().then(function() {
+            console.log("Document successfully deleted!");
+        }).catch(function(error) {
+            console.error("Error removing document: ", error);
+        });
+    }
 
     return (
         <section className="cart">
@@ -21,12 +31,22 @@ const Cart = () => {
                                 data.items.map((item, index) => {
                                 return (
                                     <li key={ index }>
-                                        <img className="img" src={`/assets/products/${item.item.img}`} alt=""/>
-                                        <div className="cont-info">
-                                            <h2>{item.item.title}</h2>
-                                            <p>Cantidad: {item.cantidad}</p>
-                                            <p>Precio por unidad: <strong>${item.item.price}</strong></p>
-                                            <p >Precio total: <strong>${item.item.price * item.cantidad}</strong></p>
+                                        
+                                        <div className="cont-info">                                            
+                                            <img className="img" src={`/assets/products/${item.item.img}`} alt=""/>
+                                            <div className="cont-title">
+                                                <h2>{item.item.title}</h2>
+                                                <p>Cantidad: {item.cantidad}</p>
+                                                <p>Precio por unidad: <strong>${item.item.price}</strong></p>
+                                                <p >Precio total: <strong>${item.item.price * item.cantidad}</strong></p>
+                                            </div>
+                                            <div className="container-icon-close">
+                                                <img className="icon-close"
+                                                    onClick={handleDeleteItem}
+                                                    src={`/assets/banners/close.svg`} 
+                                                    width="10px" alt="close"
+                                                />
+                                            </div>
                                         </div>
                                     </li>
                                 )
