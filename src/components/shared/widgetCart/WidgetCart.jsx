@@ -27,6 +27,12 @@ const WidgetCart = ({show, action}) => {
                                         <p className="p-widget-text">Precio por unidad: <strong>${item.item.price}</strong></p>
                                         <p className="p-widget-text">Precio total: <strong>${item.item.price * item.cantidad}</strong></p>
                                     </div>
+                                    <div className="container-icon-close">
+                                        <img className="icon-close-widget"
+                                            src={`/assets/banners/close.svg`} 
+                                            width="10px" alt="close"
+                                        />
+                                    </div>
                                 </li>
                             )
                         })}
