@@ -35,7 +35,6 @@ const Payment = () => {
     const [cvc, setCvc] = useState('');
     const [focus, setFocus] = useState('');
 
-
     const handleInputChange = (e) => {
         setFormData({...formData, [e.target.name]: e.target.value});
     }
@@ -226,7 +225,18 @@ const Payment = () => {
                                 ) : null}
                                 {count === 3 ? (
                                     <div className="container-button-submit">
-                                        <button className="btn-comprar" type="submit">
+                                        <button 
+                                            className="btn-comprar" 
+                                            type="submit"
+                                            disabled={!(formData.nombre !== '' && 
+                                            formData.nombre.apellido !== '' && 
+                                            formData.nombre.email !== '' && 
+                                            formData.nombre.tel !== '' && 
+                                            formData.nombre.localidad !== '' && 
+                                            formData.nombre.calle !== '' && 
+                                            formData.nombre.numero !== '' && 
+                                            formData.nombre.cPostal !== '')}
+                                        >
                                             Comprar
                                         </button>
                                     </div>

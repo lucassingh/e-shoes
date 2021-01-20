@@ -99,6 +99,10 @@ h5 {
     cursor: pointer;
 }
 
+.btn-comprar:disabled {
+    background: #375692;
+}
+
 .container-button-form .btn-back:disabled {
   background: #ddd;
   cursor: no-drop;
