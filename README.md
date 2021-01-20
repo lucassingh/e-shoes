@@ -53,7 +53,8 @@ La ultima version desplegada se puede ver en el siguiente link [https://e-shoes.
 
 #Mejoras futuras
 
--Agregar validaciones personalizadas a los inputs del formulario, por ej, en los datos de tarjeta de credito, que el numero de la tarjeta sea solo de 16 digitos, y solo numeros, etc
--Agregar nuevas categorias.
--Agregar componente que muestra distintas vistas en el detalle del producto. 
+- Agregar validaciones personalizadas a los inputs del formulario, por ej, en los datos de tarjeta de credito, que el numero de la tarjeta sea solo de 16 digitos, y solo numeros, etc
+- Agregar nuevas categorias.
+- Agregar componente que muestra distintas vistas en el detalle del producto. 
+- Terminar de hacer responsive algunos componentes
 
