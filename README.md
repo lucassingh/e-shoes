@@ -47,8 +47,8 @@ La ultima version desplegada se puede ver en el siguiente link [https://e-shoes.
  
  Se utilizo para este proyecto:
  
- -react-icons [https://www.npmjs.com/package/react-icons] (para el manejo de iconos)
- -react-credit-cards [https://www.npmjs.com/package/react-credit-cards] (para la implemtacion de las tarjetas de credito en el checkout)
+ - react-icons [https://www.npmjs.com/package/react-icons] (para el manejo de iconos)
+ - react-credit-cards [https://www.npmjs.com/package/react-credit-cards] (para la implemtacion de las tarjetas de credito en el checkout)
 (NOTA: para pruebas, si se coloca en el input del numero de tarjeta cualquier numero que empiece con 45 se obvservara una tarjeta Visa si ponemos un 54 se vera una tarjeta mastercard)
 
 #Mejoras futuras
