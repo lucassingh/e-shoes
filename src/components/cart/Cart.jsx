@@ -1,29 +1,34 @@
-import {useContext} from 'react';
+import { useContext, useEffect } from 'react';
 import {Store} from '../../store/context-data';
 import './Cart.css';
 import {Link} from 'react-router-dom';
 import EmptyCart from './emptyCart/EmptyCart';
-import { getFirestore } from '../../db/index';
 
 const Cart = () => {
-    const [data] = useContext(Store);
 
-    const db = getFirestore();
+    const [data, setData] = useContext(Store);
 
-    const handleDeleteItem = () => {
-        db.collection('products').doc().delete().then(function() {
-            console.log("Document successfully deleted!");
-        }).catch(function(error) {
-            console.error("Error removing document: ", error);
-        });
+    const handleDeleteItem = (productId) => {        
+        const productoBorrar = data.items.filter(producto => producto.item.id !== productId)
+        setData({...data, items: [...productoBorrar]})
     }
 
+    useEffect(() => {
+            console.log('montado')
+            // eslint-disable-next-line react-hooks/exhaustive-deps
+        }, [data.items])
+
+    const sumTotal = cart => {
+        let precioTotal = cart.reduce((t, product) => t += (product.item.price * product.cantidad), 0).toFixed(2);
+        return precioTotal;
+    }
+    
     return (
         <section className="cart">
             <h1>Cart</h1>
 
            {
-                data.cantidad !== 0 ?
+                data.items.length !== 0 ?
                 <div className="container-cart">
                     <div className="wrapper">
                         <ul className="container-card">
@@ -32,7 +37,7 @@ const Cart = () => {
                                 return (
                                     <li key={ index }>
                                         
-                                        <div className="cont-info">                                            
+                                        <div className="cont-info">
                                             <img className="img" src={`/assets/products/${item.item.img}`} alt=""/>
                                             <div className="cont-title">
                                                 <h2>{item.item.title}</h2>
@@ -42,7 +47,7 @@ const Cart = () => {
                                             </div>
                                             <div className="container-icon-close">
                                                 <img className="icon-close"
-                                                    onClick={handleDeleteItem}
+                                                    onClick={() => handleDeleteItem(item.item.id)}
                                                     src={`/assets/banners/close.svg`} 
                                                     width="10px" alt="close"
                                                 />
@@ -55,7 +60,7 @@ const Cart = () => {
                         <div className="cont-final">
                             <div className="cont-card-final">
                                 <img className="icon" src={`/assets/banners/icon.svg`} alt=""/>
-                                <p className="precio-total">Precio total: <strong>$ {data.precioTotal}</strong></p>
+                                <p className="precio-total">Precio total: <strong>$ {sumTotal(data.items)}</strong></p>
                                 <Link className="button-compra" to="/payment">Finalizar compra</Link>
                             </div>
                         </div>

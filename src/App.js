@@ -14,6 +14,7 @@ import ErrorPage from './components/404-error/ErrorPage';
 
 function App() {
     const [data, setData] = useState({
+        id:'',
         items: [],
         cantidad: 0,
         freeShipping: 4000,

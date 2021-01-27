@@ -11,21 +11,28 @@ const CardDetail = ({item}) => {
     const handleClickResta = () => {	
         if(qty > 1) {	
             setQty(qty - 1);	
-        }	
-    }	
+        }
+    }   
 
     const onAdd = () => {
-        setData({
-            ...data, 
-            cantidad: data.cantidad + qty,
-            items: [...data.items, {item: item, cantidad: qty}],
-            precioTotal: data.precioTotal + (item.price * qty)
-        });
-        history.push('/cart');
+        const idExistente = item.id;
+        if(data.items.find(item => item.item.id === idExistente)) {            
+            data.items[data.items.findIndex(item => item.item.id === idExistente)].cantidad += qty
+            data.items = [...data.items]
+            history.push('/cart');
+        } else {            
+            item.cantidad = qty;
+            setData({
+                ...data, 
+                cantidad: data.cantidad + qty,
+                items: [...data.items, {item: item, cantidad: qty}],
+                precioTotal: data.precioTotal + (item.price * qty)
+            });
+            history.push('/cart');
+        }
+        history.push('/cart');        
         // alert(`Agregaste ${qty} productos al carrito`);	
     }
-    
-    //console.log(data);
 
     return (
         <article className="product">

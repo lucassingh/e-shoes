@@ -7,13 +7,11 @@ import {Link} from 'react-router-dom';
 const WidgetCart = ({show, action}) => {
     const [data] = useContext(Store);
 
-    //console.log(data)
-
     return (
         <div className={`widgetCart ${show ? 'open' : 'close'}`}>
             <div className="button-widget" onClick={action}><img src={`/assets/banners/close.svg`} width="20px" alt="close"/></div>
             {
-                data.cantidad !== 0 ?
+                data.items.length !== 0 ?
                 <>
                     <ul className="container-card-widget">
                         {
