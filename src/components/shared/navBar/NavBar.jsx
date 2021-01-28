@@ -20,6 +20,10 @@ function NavBar({titulo, action}) {
         {
             texto: 'Puma',
             ruta: '/puma',
+        },
+        {
+            texto: 'Cart',
+            ruta: '/cart',
         }
     ]
 
