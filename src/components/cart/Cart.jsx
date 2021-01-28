@@ -13,10 +13,7 @@ const Cart = () => {
         setData({...data, items: [...productoBorrar]})
     }
 
-    useEffect(() => {
-            console.log('montado')
-            // eslint-disable-next-line react-hooks/exhaustive-deps
-        }, [data.items])
+    useEffect(() => {}, [data.items])
 
     const sumTotal = cart => {
         let precioTotal = cart.reduce((t, product) => t += (product.item.price * product.cantidad), 0).toFixed(2);

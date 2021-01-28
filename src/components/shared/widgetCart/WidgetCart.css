@@ -44,6 +44,7 @@
 
 .icon-close-widget {
     margin-top: 0;
+    cursor: pointer;
 }
 
 .cont-info-widget h2 {
