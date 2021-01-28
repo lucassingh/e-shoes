@@ -12,7 +12,7 @@ const Payment = () => {
 
     const db = getFirestore();
 
-    const [data] = useContext(Store);
+    const [data, setData ] = useContext(Store);
 
     const [venta, setVenta] = useState(false);
 
@@ -61,6 +61,7 @@ const Payment = () => {
         .then(({id}) => {
             setVenta(true);
             setTrackEnvio(id);
+            setData({ cantidad: 0, items: [] });
         })
         .catch(err => console.log(err))
     }
@@ -83,6 +84,7 @@ const Payment = () => {
                                                 <input type="text"
                                                     name="nombre" 
                                                     id="field-text"
+                                                    required
                                                     value={formData.nombre}
                                                     onChange={handleInputChange}/>
                                                 <label className="material-form-field-label">
@@ -91,7 +93,8 @@ const Payment = () => {
                                             </div>
                                             <div className="material-form-field">
                                                 <input type="text"
-                                                name="apellido" 
+                                                name="apellido"
+                                                required
                                                 value={formData.apellido}
                                                 onChange={handleInputChange}/>
                                                 <label className="material-form-field-label">
@@ -102,6 +105,7 @@ const Payment = () => {
                                             <div className="material-form-field">
                                                 <input type="email" 
                                                     name="email"
+                                                    required
                                                     value={formData.email}
                                                     onChange={handleInputChange}/>
                                                 <label className="material-form-field-label">
@@ -110,7 +114,8 @@ const Payment = () => {
                                             </div>
                                             <div className="material-form-field">
                                                 <input type="tel"
-                                                name="tel" 
+                                                name="tel"
+                                                required
                                                 value={formData.tel}
                                                 onChange={handleInputChange}/>
                                                 <label className="material-form-field-label">
@@ -135,7 +140,7 @@ const Payment = () => {
                                                 <div className="material-form-field">
                                                     <input type="tel"
                                                         name="number"
-                                                        placeholder="Ej: 4111236523232323"
+                                                        required
                                                         value={number}
                                                         onChange={e => setNumber(e.target.value)}
                                                         onFocus={e => setFocus(e.target.name)}/>
@@ -146,7 +151,7 @@ const Payment = () => {
                                                 <div className="material-form-field">
                                                     <input type="text"
                                                         name="name"
-                                                        placeholder="Ej: Juan Pérez"
+                                                        required
                                                         value={name}
                                                         onChange={e => setName(e.target.value)}
                                                         onFocus={e => setFocus(e.target.name)}/>
@@ -158,7 +163,7 @@ const Payment = () => {
                                                     <input type="text"
                                                         name="expiry"
                                                         value={expiry}
-                                                        placeholder="Ej: 04/24"
+                                                        required
                                                         onChange={e => setExpiry(e.target.value)}
                                                         onFocus={e => setFocus(e.target.name)}/>
                                                     <label className="material-form-field-label">
@@ -168,7 +173,7 @@ const Payment = () => {
                                                 <div className="material-form-field">
                                                     <input type="tel"
                                                         name="cvc"
-                                                        placeholder="Ej: 123"
+                                                        required
                                                         value={cvc}
                                                         onChange={e => setCvc(e.target.value)}
                                                         onFocus={e => setFocus(e.target.name)}/>
@@ -187,6 +192,7 @@ const Payment = () => {
                                             <div className="material-form-field">
                                                 <input type="text"
                                                     name="localidad"
+                                                    required
                                                     value={formData.localidad}
                                                     onChange={handleInputChange}/>
                                                 <label className="material-form-field-label">
@@ -196,6 +202,7 @@ const Payment = () => {
                                             <div className="material-form-field">
                                                 <input type="text"
                                                     name="calle"
+                                                    required
                                                     value={formData.calle}
                                                     onChange={handleInputChange}/>
                                                 <label className="material-form-field-label">
@@ -205,6 +212,7 @@ const Payment = () => {
                                             <div className="material-form-field">
                                                 <input type="text"
                                                     name="numero"
+                                                    required
                                                     value={formData.numero}
                                                     onChange={handleInputChange}/>
                                                 <label className="material-form-field-label">
@@ -214,6 +222,7 @@ const Payment = () => {
                                             <div className="material-form-field">
                                             <input type="text"
                                                 name="cPostal"
+                                                required
                                                 value={formData.cPostal}
                                                 onChange={handleInputChange}/>
                                             <label className="material-form-field-label">
